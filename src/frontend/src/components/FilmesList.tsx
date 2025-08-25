@@ -46,8 +46,8 @@ const FilmesList: React.FC = () => {
 	if (error) return <div className="text-center mt-10 text-red-500">{error}</div>;
 
 	return (
-		<div className="max-w-4xl mx-auto py-10">
-			<h1 className="text-3xl font-bold mb-8 text-center">Filmes</h1>
+		<div className="max-w-4xl mx-auto py-10 bg-red-300">
+			<h1 className="text-3xl bg-red-300 font-bold mb-8 text-center">Filmes</h1>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 				{filmes.map(filme => {
 					const imageUrl = getImageUrl(filme.capa);
