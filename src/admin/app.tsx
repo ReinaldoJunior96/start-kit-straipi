@@ -1,16 +1,26 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
+import logo from "./images/logo.png";
 
 export default {
   config: {
-    tutorials: false, 
-    notifications: { releases: false }, 
+    auth: { logo },
+    head: { favicon: logo },
+    menu: { logo },
+    tutorials: false,
+    notifications: { releases: false },
+
     locales: ['pt-BR'],
+    
     locale: 'pt-BR',
-    translations:{
-     "HomePage.header.subtitle": "Bem vindo ao painel",
-     "tours.overview.title": "trocou de titulo",
-      "tours.overview.subtitle": "testandoooo",
-    }
+
+    translations: {
+      'pt-BR': {
+        'global.localeToggle.label': 'Idioma da interface',
+      },
+      en: {
+        'global.localeToggle.label': 'Interface language',
+      },
+    },
   },
   bootstrap(app: StrapiApp) {
     console.log(app);
