@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agendamentos",
+  "info": {
+    "singularName": "agendamento",
+    "pluralName": "agendamentos",
+    "displayName": "Agendamento"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "data": {
+      "type": "date"
+    },
+    "horaInicio": {
+      "type": "datetime"
+    },
+    "horaFim": {
+      "type": "datetime"
+    },
+    "paciente": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::paciente.paciente"
+    },
+    "unidade": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::unidade.unidade"
+    }
+  }
+}

@@ -1,8 +1,9 @@
 import type { StrapiApp } from '@strapi/strapi/admin';
 import logo from "./images/logo.png";
-
+import "./app.css";
 export default {
   config: {
+    
     auth: { logo },
     head: { favicon: logo },
     menu: { logo },

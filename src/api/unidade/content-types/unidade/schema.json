@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "unidades",
+  "info": {
+    "singularName": "unidade",
+    "pluralName": "unidades",
+    "displayName": "Unidade"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "cnes": {
+      "type": "string"
+    },
+    "cnpj": {
+      "type": "string"
+    },
+    "razaoSocial": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

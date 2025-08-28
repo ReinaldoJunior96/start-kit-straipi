@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pacientes",
+  "info": {
+    "singularName": "paciente",
+    "pluralName": "pacientes",
+    "displayName": "Paciente"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nomeSocial": {
+      "type": "string"
+    },
+    "cpf": {
+      "type": "string"
+    },
+    "nascimento": {
+      "type": "date"
+    }
+  }
+}

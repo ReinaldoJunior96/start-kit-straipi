@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "convenios",
+  "info": {
+    "singularName": "convenio",
+    "pluralName": "convenios",
+    "displayName": "Convenio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "cnpj": {
+      "type": "string"
+    }
+  }
+}

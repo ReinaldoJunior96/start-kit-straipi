@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enderecos",
+  "info": {
+    "singularName": "endereco",
+    "pluralName": "enderecos",
+    "displayName": "Endereco"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "numero": {
+      "type": "string"
+    },
+    "bairro": {
+      "type": "string"
+    }
+  }
+}

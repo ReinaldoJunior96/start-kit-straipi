@@ -1,0 +1,6 @@
+/* Esconde links que você removeu */
+a[href="/admin/marketplace"],
+a[href="/admin/plugins/cloud"] {
+  display: none !important;
+}
+
