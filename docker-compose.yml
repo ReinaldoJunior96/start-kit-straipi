@@ -1,17 +1,29 @@
 services:
+  proxy:
+    image: nginx:alpine
+    container_name: proxy
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "80:80"
+      # se quiser HTTPS local com mkcert, dá pra expor 443 e configurar depois
+      # - "443:443"
+    depends_on:
+      - frontend
+      - strapi
+    networks: [strapi]
+
   strapi:
     container_name: strapi
     build: .
     image: strapi:latest
     restart: unless-stopped
     env_file: .env
-    command: sh -c "npm run develop"              # <- dev
+    command: sh -c "npm run develop"
     environment:
       NODE_ENV: development
       HOST: 0.0.0.0
       PORT: 1337
-      VITE_HOST: 0.0.0.0                          # <- faz o Vite bindar
-      VITE_PORT: 5173
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: mysql
       DATABASE_PORT: ${DATABASE_PORT}
@@ -21,16 +33,16 @@ services:
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
+      # Opcional: ajuda Strapi a gerar URLs absolutas corretas
+      # STRAPI_URL: http://dominio.local
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
       - ./public/uploads:/opt/app/public/uploads
       - ./.env:/opt/app/.env
-      - ./package.json:/opt/app/package.json      # <- mapeie dentro de /opt/app
-      # (se usar lock): - ./package-lock.json:/opt/app/package-lock.json
+      - ./package.json:/opt/app/package.json
     ports:
       - "1337:1337"
-      - "5173:5173"                               # <- EXPOSE Vite
     networks: [strapi]
     depends_on: [mysql]
 
